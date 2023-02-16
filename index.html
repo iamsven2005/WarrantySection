@@ -1,0 +1,30 @@
+<html><head>
+	<title>Subdirectories of URL</title>
+</head>
+<body>
+	<h1>Subdirectories of URL</h1>
+	<ul id="subdirectories"><li>Users</li><li>iamsv</li><li>OneDrive</li><li>Desktop</li><li>folders</li><li>cheat</li><li>app_dev_backup</li><li>test.html</li></ul>
+
+	<script>
+		// Get the subdirectories of the URL
+		var pathArray = window.location.pathname.split('/');
+		var subdirectories = [];
+
+		// Loop through the path array to get the subdirectories
+		for (var i = 1; i < pathArray.length; i++) {
+			if (pathArray[i]) {
+				subdirectories.push(pathArray[i]);
+			}
+		}
+
+		// Set the subdirectories in the HTML
+		var subdirectoriesList = document.getElementById("subdirectories");
+		for (var j = 1; j < subdirectories.length; j++) {
+			var subdirectoryItem = document.createElement("li");
+			subdirectoryItem.appendChild(document.createTextNode(subdirectories[j]));
+			subdirectoriesList.appendChild(subdirectoryItem);
+		}
+	</script>
+
+
+</body></html>
